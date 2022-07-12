@@ -40,7 +40,7 @@ const fetchMoviesCredits = id => {
 };
 const fetchMoviesReviews = id => {
   return fetch(
-    `https://api.themoviedb.org/3/movie/{id}/reviews?api_key=d3e8a787d9b4dc35185152e0bafc0774&language=en-US&page=1`
+    `https://api.themoviedb.org/3/movie/${id}/reviews?api_key=d3e8a787d9b4dc35185152e0bafc0774&language=en-US`
   ).then(response => {
     if (response.ok) {
       return response.json();

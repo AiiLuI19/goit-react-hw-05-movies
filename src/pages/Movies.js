@@ -1,17 +1,17 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import MovieSearchList from '../components/MovieSearchList';
 import SearchForm from '../components/SearchForm/SearchForm';
 
 const Movies = () => {
-  const [movieName, setMovieName] = useState('');
-  console.log(movieName);
+  const navigate = useNavigate();
   const handleFormSubmit = movieName => {
-    setMovieName(movieName);
+    navigate({ search: `query=${movieName}` });
   };
   return (
     <main>
       <SearchForm onSubmit={handleFormSubmit} />
-      <MovieSearchList movieName={movieName} />
+      <MovieSearchList />
     </main>
   );
 };

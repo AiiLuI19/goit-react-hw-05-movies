@@ -1,0 +1,31 @@
+.link {
+  padding: 10px;
+}
+
+.active {
+  composes: link;
+  color: rgb(245, 5, 129);
+}
+
+.unActive {
+  composes: link;
+  color: black;
+}
+header {
+  text-align: justify;
+  letter-spacing: 1px;
+  height: 4em;
+  padding: 1em 10%;
+  margin-bottom: 15px;
+  background: #eef8f8;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 1px solid rgb(135, 133, 133);
+  box-shadow: 2px 5px 32px 4px rgba(0, 0, 0, 0.54);
+  -webkit-box-shadow: 2px 5px 32px 4px rgba(0, 0, 0, 0.54);
+  -moz-box-shadow: 2px 5px 32px 4px rgba(0, 0, 0, 0.54);
+}
+.list {
+  display: flex;
+}

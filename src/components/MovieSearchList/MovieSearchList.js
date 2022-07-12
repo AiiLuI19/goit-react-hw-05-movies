@@ -1,18 +1,24 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Outlet, useLocation, useSearchParams } from 'react-router-dom';
+
 import fetchApi from '../../services/fetchApi';
-const MovieSearchList = ({ movieName }) => {
+
+const MovieSearchList = () => {
+  const [params] = useSearchParams();
+  const query = params.get('query');
+
   const { fetchSearchMovies } = fetchApi;
   const [movies, setMovies] = useState([]);
   const [status, setStatus] = useState('idle');
   const [error, setError] = useState(null);
+  const location = useLocation();
 
   useEffect(() => {
-    if (!movieName) {
+    if (!query) {
       return;
     }
     setStatus('pending');
-    fetchSearchMovies(movieName)
+    fetchSearchMovies(query)
       .then(({ results }) => {
         setStatus('resolved');
         setMovies(results);
@@ -21,8 +27,7 @@ const MovieSearchList = ({ movieName }) => {
         setError(error);
         setStatus('rejected');
       });
-  }, [fetchSearchMovies, movieName]);
-  console.log();
+  }, [fetchSearchMovies, query]);
 
   return (
     <>
@@ -34,13 +39,14 @@ const MovieSearchList = ({ movieName }) => {
 
             return (
               <li key={id}>
-                <Link to={`/movies/${id}`} state={movie}>
+                <Link to={`/movies/${id}`} state={{ from: location }}>
                   <h2>{title}</h2>
                 </Link>
               </li>
             );
           })}
       </ul>
+      <Outlet />
     </>
   );
 };
