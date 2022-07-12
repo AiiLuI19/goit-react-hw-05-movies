@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/home.af377d02.chunk.css","mappings":"AAAA,uBACE,iBACF,CACA,qBACE,oBACF","sources":["components/MovieList/MovieList.module.css"],"sourcesContent":[".list {\n  padding-left: 15px;\n}\n.li {\n  display: inline-block;\n}\n"],"names":[],"sourceRoot":""}
