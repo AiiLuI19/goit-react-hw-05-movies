@@ -1,5 +1,6 @@
 .link {
-  padding: 10px;
+  padding: 1px;
+  margin-right: 10px;
 }
 
 .active {
@@ -9,15 +10,15 @@
 
 .unActive {
   composes: link;
-  color: black;
+  color: rgb(240, 238, 238);
 }
 header {
   text-align: justify;
   letter-spacing: 1px;
-  height: 4em;
-  padding: 1em 10%;
+  height: 40px;
+  padding: 15px;
   margin-bottom: 15px;
-  background: #eef8f8;
+  background: #656666;
   color: #fff;
   font-size: 18px;
   font-weight: bold;

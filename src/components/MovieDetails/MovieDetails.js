@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useRef } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
-
+import s from './MovieDetails.module.css';
 const MovieDetails = ({ movie }) => {
   const location = useLocation();
   const backLink = useRef(
@@ -19,28 +19,40 @@ const MovieDetails = ({ movie }) => {
   return (
     <>
       <div>
-        <Link to={backLink.current}>&#171; Go back</Link>
+        <Link className={s.backLink} to={backLink.current}>
+          &#171; Go back
+        </Link>
         <div>
-          <section>
-            <img
-              src={`https://www.themoviedb.org/t/p/w600_and_h900_bestv2/${poster_path}`}
-              alt={original_title}
-            />
-            <h2>
-              {original_title} ({new Date(release_date).getFullYear()})
-            </h2>
-            <p>User Score: {vote_average}% </p>
-            <h3>Overview</h3>
-            <p>{overview}</p>
-            <h3>Genres</h3>
-            <p>{genres.map(({ name }) => name).join(', ')}</p>
+          <section className={s.info}>
+            <div className={s.img}>
+              <img
+                src={`https://www.themoviedb.org/t/p/w600_and_h900_bestv2/${poster_path}`}
+                alt={original_title}
+              />
+            </div>
+            <div className={s.textInfo}>
+              <h2>
+                {original_title} ({new Date(release_date).getFullYear()})
+              </h2>
+              <p>User Score: {vote_average}% </p>
+              <h3>Overview</h3>
+              <p>{overview}</p>
+              <h3>Genres</h3>
+              <p>{genres.map(({ name }) => name).join(', ')}</p>
+            </div>
           </section>
           <section>
-            <h2>Additional information</h2>
-            <Link to="cast" state={{ from: location.pathname }}>
+            <h2 className={s.title}>Additional information</h2>
+            <Link
+              className={s.link}
+              to="cast"
+              state={{ from: location.pathname }}
+            >
               Cast
             </Link>
-            <Link to="reviews">Reviews</Link>
+            <Link className={s.link} to="reviews">
+              Reviews
+            </Link>
           </section>
         </div>
         <Outlet />

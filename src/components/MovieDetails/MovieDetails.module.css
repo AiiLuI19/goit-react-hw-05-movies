@@ -1,0 +1,37 @@
+.img {
+  width: 0 auto;
+
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+.info {
+  display: flex;
+  margin-top: 12px;
+  width: 70%;
+  margin-left: 20px;
+  text-align: justify;
+}
+
+.textInfo {
+  margin-left: 20px;
+  line-height: 1.5;
+}
+.title {
+  margin-left: 20px;
+  margin-bottom: 12px;
+}
+.link {
+  margin-left: 25px;
+  margin-right: 10px;
+  font-size: 15px;
+}
+.backLink {
+  margin-left: 10px;
+  color: black;
+}
+.link:hover,
+.link:focus,
+.backLink:hover,
+.backLink:focus {
+  color: rgb(219, 12, 153);
+}

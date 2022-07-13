@@ -1,0 +1,14 @@
+.wrap {
+  padding-right: 20px;
+  width: 70%;
+  margin-left: 20px;
+  text-align: justify;
+}
+.title {
+  text-indent: 30px;
+  margin-bottom: 10px;
+}
+.p {
+  text-indent: 20px;
+  margin-bottom: 10px;
+}

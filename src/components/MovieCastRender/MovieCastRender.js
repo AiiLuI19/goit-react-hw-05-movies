@@ -1,14 +1,10 @@
 import PropTypes from 'prop-types';
+import s from './MovieCastRender.module.css';
 function MovieCastRender({ name, character, profile }) {
   return (
-    <>
+    <div className={s.wrap}>
       {!profile ? (
-        <img
-          src={require('../../imeges/Z2000128425.jpg')}
-          alt="404"
-          width="185px"
-          height="278px"
-        />
+        <img src={require('../../imeges/Z2000128425.jpg')} alt="404" />
       ) : (
         <img
           src={`https://www.themoviedb.org/t/p/w185/${profile}`}
@@ -17,7 +13,7 @@ function MovieCastRender({ name, character, profile }) {
       )}
       <h2>{name}</h2>
       <p>Character: {character}</p>
-    </>
+    </div>
   );
 }
 

@@ -20,11 +20,17 @@ const MovieList = () => {
           const { id, title } = trendMovie;
 
           return (
-            <li key={id} className="s.li">
-              &#127909;
-              <Link to={`/movies/${id}`} state={{ from: location }}>
-                <h2>{title}</h2>
-              </Link>
+            <li key={id}>
+              <span className={s.span}>
+                &#127909;
+                <Link
+                  className={s.li}
+                  to={`/movies/${id}`}
+                  state={{ from: location }}
+                >
+                  <h2 className={s.title}>{title}</h2>
+                </Link>
+              </span>
             </li>
           );
         })}

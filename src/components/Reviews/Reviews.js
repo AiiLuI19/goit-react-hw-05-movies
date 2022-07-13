@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import fetchApi from '../../services/fetchApi';
 import ReviewsRender from '../ReviewsRender/ReviewsRender';
+import s from '../ReviewsRender/ReviewsRender.module.css';
 
 const Reviews = () => {
   const { fetchMoviesReviews } = fetchApi;
